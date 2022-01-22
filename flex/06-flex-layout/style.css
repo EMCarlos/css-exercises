@@ -41,6 +41,10 @@ a {
   padding: 16px;
 }
 
+.header {
+  flex: 1;
+}
+
 ul {
   display: flex;
   list-style-type: none;
