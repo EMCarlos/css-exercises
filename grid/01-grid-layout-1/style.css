@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
   height: 100%;
   margin: 0;
 }
@@ -20,15 +21,15 @@ body, html {
 }
 
 .header {
-  background-color: #FFDE22;
+  background-color: #ffde22;
 }
 
 .sidebar {
-  background-color: #FF7755;
+  background-color: #ff7755;
 }
 
 .nav {
-  background-color: #00DDFF;
+  background-color: #00ddff;
 }
 
 .article {
@@ -44,4 +45,38 @@ body, html {
 
 .footer {
   background-color: #393f4d;
+  grid-area: footer;
+}
+
+/** 
+Solution: I added the display grid property,
+and using the grid-template-areas, grid-area, 
+and grid-template columns with minmax it can be fully responsive
+*/
+
+.container {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: minmax(160px, 1fr) minmax(160px, 3fr);
+  grid-template-areas:
+    "header header"
+    "sidebar nav"
+    "sidebar article"
+    "footer footer";
+}
+
+.header {
+  grid-area: header;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.nav {
+  grid-area: nav;
+}
+
+.article {
+  grid-area: article;
 }
